@@ -1,13 +1,45 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
+    <link th:href="@{/styles/main.css}" rel="stylesheet" />
     <title>Title</title>
 </head>
 <body>
-<form action="">
-    <label for="name">Write your name</label>
-    <input type="text" id="name">
+<header class="header">
+    <h1>Trump did nothing wrong</h1>
+</header>
+<form action="/submit" method="post" class="submitField">
+    <label for="title">Title</label><br>
+    <input type="text" id="title" name="title" placeholder="Title of post"><br>
+
+    <label for="text">Content</label><br>
+    <input type="text" id="text" name="content" placeholder="Write something"><br>
+
+    <label for="date">Date</label><br>
+    <input type="date" id="date" name="date"><br>
+
+    <label>Public or private</label><br>
+
+    <label for="public">Public</label>
+    <input type="radio" id="public" name="public-or-private" value="public">
+
+    <label for="private">Private</label>
+    <input type="radio" id="private" name="public-or-private" value="private"><br>
+
+    <button>Send post</button>
+
 </form>
+
+<section class="List-of-posts">
+    <ul th:each="post : ${posts}">
+        <li >
+            <p th:text="${post.title}"></p>
+            <p th:text="${post.content}"></p>
+            <p th:text="${post.date}"></p>
+        </li>
+    </ul>
+
+</section>
 </body>
 </html>

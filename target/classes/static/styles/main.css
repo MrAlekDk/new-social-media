@@ -1,0 +1,32 @@
+body{
+    background-color: red;
+}
+
+h1{
+    text-align: center;
+    font-family: fantasy;
+    font-weight: bold;
+}
+
+.header{
+
+}
+
+.submitField{
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    align-self: center;
+    border: solid 2px black;
+    border-radius: 2px;
+
+}
+
+.List-of-posts{
+    background-color: lightgray;
+    border: solid 1px black;
+    height: 300px;
+    width: 300px;
+
+
+}
